@@ -1,0 +1,123 @@
+<div class="card">
+    <div class="card-header bg-primary text-white text-center">
+        Items
+    </div>
+    <div class="card-body">
+        <form id="form-formulario">
+
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="id_item">Id</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="id_item" name="id_item"
+                           onchange="buscar_id()"
+                           class="form-control form-control-sm"
+                           value="0"
+                           placeholder="Id de Item">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-sm btn-primary"
+                            onclick="cargar_busqueda('frm/archivos/items/buscar_items.html')">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="nombre_item">Nombre</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="nombre_item" name="nombre_item" 
+                           class="form-control form-control-sm"
+                           placeholder="Nombre del Item">
+                </div>
+            </div>
+
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="precio_item">Precio</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="precio_item" name="precio_item" 
+                           class="form-control form-control-sm"
+                           placeholder="Precio del Item">
+                </div>  
+            </div>
+
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="id_tipoitem">Tipo</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="id_tipoitem" name="id_tipoitem"
+                           onchange="buscar_id_tipoitem()"
+                           class="form-control form-control-sm"
+                           value="0"
+                           placeholder="Id Tipo Item">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-sm btn-primary"
+                            onclick="cargar_busqueda('frm/archivos/items/buscar_tipositems.html')">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" id="nombre_tipoitem" name="nombre_tipoitem" 
+                           class="form-control form-control-sm"
+                           placeholder="Nombre Tipo de Item" readonly="readonly">
+                </div>  
+            </div>
+
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="id_impuesto">Impuesto</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="id_impuesto" name="id_impuesto"
+                           onchange="buscar_id_impuesto()"
+                           class="form-control form-control-sm"
+                           value="0"
+                           placeholder="Id del Impuesto">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-sm btn-primary"
+                            onclick="cargar_busqueda('frm/archivos/items/buscar_impuestos.html')">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" id="nombre_impuesto" name="nombre_impuesto" 
+                           class="form-control form-control-sm"
+                           placeholder="Nombre del Impuesto" readonly="readonly">
+                </div>  
+            </div>
+
+        </form>
+
+    </div>
+    <div class="card-footer text-center">
+        <button class="btn btn-sm btn-primary" id="boton-agregar" onclick="agregar()">
+            <i class="fas fa-plus"></i> Agregar
+        </button>
+        <button class="btn btn-sm btn-success" id="boton-modificar" onclick="modificar()">
+            <i class="fas fa-pencil-alt"></i> Modificar
+        </button>
+        <button class="btn btn-sm btn-danger" id="boton-eliminar" onclick="eliminar()">
+            <i class="fas fa-trash"></i> Eliminar
+        </button>
+        <button class="btn btn-sm btn-warning" onclick="salir_formulario()">
+            <i class="fas fa-sign-out-alt"></i> Salir
+        </button>
+    </div>
+</div>
+
+<script>
+    $.getScript('frm/archivos/items/js/scripts.js');
+</script>

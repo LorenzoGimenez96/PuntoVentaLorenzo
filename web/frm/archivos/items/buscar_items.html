@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header bg-primary text-white text-center">
+        Buscar Items
+    </div>
+    <div class="card-body">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar texto ..." 
+                   id="texto" name="texto" onkeyup="buscar_nombre()"
+                   aria-label="buscar_texto" aria-describedby="basic-addon-buscar">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon-buscar">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Nombre Tipo Item</th>
+                    <th>Id Tipo Item</th>
+                    <th>Nombre Impuesto</th>
+                    <th>Id Impuesto</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_datos" >
+                
+            </tbody>
+
+        </table>
+
+        <nav aria-label="paginacion">
+            <ul class="pagination justify-content-center">
+                <li class="page-item" onclick="anterior('buscar_nombre()')">
+                    <a class="page-link" href="#">Anterior</a>
+                </li>
+                <li class="page-item" onclick="siguiente('buscar_nombre()')">
+                    <a class="page-link" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="card-footer text-center">
+        <button class="btn btn-sm btn-warning" onclick="salir_busqueda('#nombre_item')">
+            <i class="fas fa-sign-out-alt"></i> Salir
+        </button>
+    </div>
+</div>
+<script>
+    buscar_nombre();
+</script>

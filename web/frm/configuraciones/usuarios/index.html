@@ -1,0 +1,104 @@
+<div class="card">
+    <div class="card-header bg-primary text-white text-center">
+        Usuarios
+    </div>
+    <div class="card-body">
+        <form id="form-formulario">
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="id_usuario">Id</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="id_usuario" name="id_usuario"
+                           onchange="buscar_id()"
+                           class="form-control form-control-sm"
+                           value="0"
+                           placeholder="Id de Usuario">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-sm btn-primary"
+                            onclick="cargar_busqueda('frm/configuraciones/usuarios/buscar_usuarios.html')">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="nombre_usuario">Nombre</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="nombre_usuario" name="nombre_usuario" 
+                           class="form-control form-control-sm"
+                           placeholder="Nombre del Usuario">
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="usuario_usuario">Usuario</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" id="usuario_usuario" name="usuario_usuario" 
+                           class="form-control form-control-sm"
+                           placeholder="Usuario">
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="clave_usuario">Contraseña</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="password" id="clave_usuario" name="clave_usuario" 
+                           class="form-control form-control-sm"
+                           placeholder="Contraseña">
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">
+                    <label for="id_rol">Rol</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="id_rol" name="id_rol"
+                           onchange="buscar_id_rol()"
+                           class="form-control form-control-sm"
+                           value="0"
+                           placeholder="Id de Rol">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-sm btn-primary"
+                            onclick="cargar_busqueda('frm/configuraciones/usuarios/buscar_roles.html')">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" id="nombre_rol" name="nombre_rol"
+                           class="form-control form-control-sm"
+                           placeholder="Nombre de Rol"
+                           readonly="readonly">
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="card-footer text-center">
+        <button class="btn btn-sm btn-primary" id="boton-agregar" onclick="agregar()">
+            <i class="fas fa-plus"></i> Agregar
+        </button>
+        <button class="btn btn-sm btn-success" id="boton-modificar" onclick="modificar()">
+            <i class="fas fa-pencil-alt"></i> Modificar
+        </button>
+        <button class="btn btn-sm btn-danger" id="boton-eliminar" onclick="eliminar()">
+            <i class="fas fa-trash"></i> Eliminar
+        </button>
+        <button class="btn btn-sm btn-warning" onclick="salir_formulario()">
+            <i class="fas fa-sign-out-alt"></i> Salir
+        </button>
+    </div>
+</div>
+
+<script>
+    $.getScript('frm/configuraciones/usuarios/js/scripts.js');
+</script>
